@@ -8,7 +8,7 @@ const bodyParser = require('body-parser')
 const dotenv = require('dotenv')
 dotenv.config()
 
-//importing index.js for routes
+//importing files for routes
 const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/author')
 
@@ -20,7 +20,7 @@ app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
 app.use(expressLayouts)
 
-//setting body parsers
+//setting body parsers as middleware
 app.use(bodyParser.urlencoded({limit: '10mb', extended: false}))
 
 // set public folder
@@ -42,3 +42,4 @@ app.use('/author', authorRouter)
 
 // setting port where app is listening
 app.listen(process.env.PORT || 3000)
+ 
